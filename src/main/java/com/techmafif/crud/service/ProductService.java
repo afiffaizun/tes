@@ -17,13 +17,18 @@ public class ProductService {
     }
 
     //getAll Prduct
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
     //getProductById
-    public Optional<Product> getProductByCategory(Long id) {
+    public Optional<Product> getProductById(Long id) {
         return productRepository.findById(id);
+    }
+
+    //getProduct by Category
+    public List<Product> getProductByCategory(String categoryName) {
+        return productRepository.findProductByCategory(categoryName);
     }
 
     //getProduct by Price
